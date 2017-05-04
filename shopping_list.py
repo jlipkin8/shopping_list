@@ -21,8 +21,11 @@ def add_new_shopping_list(lists_by_name, new_list_name):
       None
     """
 
-    # your code here! 
-    pass
+    if new_list_name in lists_by_name: 
+        print "List already in dictionary"
+    else: 
+        lists_by_name[new_list_name] = []         
+    
 
 
 def remove_shopping_list(lists_by_name, list_name_to_remove):
@@ -37,9 +40,12 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
     Returns:
       None
     """
-
-    # your code here! 
-    pass
+ 
+    if list_name_to_remove in lists_by_name: 
+        del list_name_to_remove
+    else: 
+        print "List does not exist"
+        
 
 
 def add_to_shopping_list(lists_by_name, list_name, items):
@@ -89,7 +95,10 @@ def display_shopping_list(lists_by_name, list_name):
     """
 
     # your code here! 
-    pass
+    if list_name in lists_by_name: 
+        print lists_by_name[list_name]
+    else: 
+        print "List missing"
 
 
 def show_all_lists(lists_by_name):
